@@ -1,0 +1,171 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * W | Dental concept design system.
+ * Crisp pearl & subtle ice-blue surfaces, deep sapphire navy ink, fresh clinical cyan-teal accent.
+ * Display: Fraunces (serif). Body: DM Sans.
+ */
+
+@theme inline {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-ivory: var(--ivory);
+  --color-ink: var(--ink);
+  --color-sage: var(--sage);
+  --color-sage-foreground: var(--sage-foreground);
+  --color-notice: var(--notice);
+  --color-notice-foreground: var(--notice-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-card:
+    0 1px 3px oklch(0.22 0.035 255 / 0.04), 0 12px 30px -16px oklch(0.22 0.035 255 / 0.12);
+  --shadow-lift:
+    0 4px 10px oklch(0.22 0.035 255 / 0.05), 0 20px 42px -18px oklch(0.22 0.035 255 / 0.18);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --ivory: oklch(0.985 0.008 230);
+  --ink: oklch(0.22 0.035 255);
+  --sage: oklch(0.58 0.09 215);
+  --sage-foreground: oklch(0.99 0.002 230);
+
+  --background: oklch(0.985 0.008 230);
+  --foreground: oklch(0.22 0.035 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.035 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.035 255);
+  --primary: oklch(0.22 0.035 255);
+  --primary-foreground: oklch(0.99 0.002 230);
+  --secondary: oklch(0.955 0.015 225);
+  --secondary-foreground: oklch(0.22 0.035 255);
+  --muted: oklch(0.95 0.012 225);
+  --muted-foreground: oklch(0.48 0.025 250);
+  --accent: oklch(0.58 0.09 215);
+  --accent-foreground: oklch(0.99 0.002 230);
+  --destructive: oklch(0.545 0.19 27);
+  --destructive-foreground: oklch(0.99 0.002 230);
+  --border: oklch(0.91 0.012 230);
+  --input: oklch(0.89 0.015 230);
+  --ring: oklch(0.58 0.09 215);
+  --notice: oklch(0.18 0.04 255);
+  --notice-foreground: oklch(0.97 0.01 225);
+
+  --sidebar: oklch(0.985 0.008 230);
+  --sidebar-foreground: oklch(0.22 0.035 255);
+  --sidebar-primary: oklch(0.22 0.035 255);
+  --sidebar-primary-foreground: oklch(0.99 0.002 230);
+  --sidebar-accent: oklch(0.955 0.015 225);
+  --sidebar-accent-foreground: oklch(0.22 0.035 255);
+  --sidebar-border: oklch(0.91 0.012 230);
+  --sidebar-ring: oklch(0.58 0.09 215);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(
+        ellipse 900px 500px at 50% -80px,
+        oklch(0.94 0.025 225 / 0.5),
+        transparent 75%
+      ),
+      radial-gradient(circle 600px at 100% 25%, oklch(0.95 0.02 210 / 0.4), transparent 60%),
+      radial-gradient(circle 700px at 0% 70%, oklch(0.945 0.02 235 / 0.35), transparent 60%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+}
+
+@utility rule-line {
+  background-image: linear-gradient(to right, transparent, var(--color-border), transparent);
+}
