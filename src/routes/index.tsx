@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, CalendarCheck, MapPin, Phone } from "lucide-react";
+import { toast } from "sonner";
 
 import heroImage from "@/assets/hero-clinic.jpg";
 import galleryTreatment from "@/assets/gallery-treatment.jpg";
@@ -13,17 +14,17 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "W | Dental — Dental Care in Far Rockaway, NY | Concept Demo" },
+      { title: "Premium Dental Clinic — Modern Dental Care | Concept Demo" },
       {
         name: "description",
         content:
-          "Concept website for W | Dental in Far Rockaway, NY, showcasing a modern dental website experience with services, contact information and appointment pathways.",
+          "Concept website for Premium Dental Clinic, showcasing a modern dental website experience with services, contact information and appointment pathways.",
       },
-      { property: "og:title", content: "W | Dental — Concept Website Demo" },
+      { property: "og:title", content: "Premium Dental Clinic — Concept Website Demo" },
       {
         property: "og:description",
         content:
-          "A modern dental website concept for W | Dental in Far Rockaway, NY. Demo only — not affiliated with W | Dental.",
+          "A modern dental website concept by MNW Creative Studio. Demo only.",
       },
     ],
   }),
@@ -41,11 +42,11 @@ const CARE_AREAS = [
   },
   {
     title: "Cosmetic Treatments",
-    copy: "Listed cosmetic dental care categories, including whitening.",
+    copy: "Comprehensive cosmetic dental care categories, including teeth whitening.",
   },
   {
     title: "Restorative Care",
-    copy: "Listed restorative categories, including dental implants.",
+    copy: "Advanced restorative categories, including dental implants.",
   },
 ];
 
@@ -70,7 +71,16 @@ function Home() {
                 </Link>
               </Button>
               <Button asChild variant="quiet" size="xl">
-                <a href={PRACTICE.phoneHref}>
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                >
                   <Phone aria-hidden="true" />
                   Call {PRACTICE.phoneDisplay}
                 </a>
@@ -111,7 +121,7 @@ function Home() {
           ))}
         </div>
         <p className="mt-10 text-xs leading-relaxed text-muted-foreground">
-          Service categories shown are those publicly listed for the practice. No pricing,
+          Service categories shown are representative examples for demonstration purposes. No pricing,
           availability or outcome claims are made in this concept.
         </p>
       </Section>
@@ -120,7 +130,7 @@ function Home() {
         <SectionHeading
           eyebrow="Quick actions"
           title="Everything a patient needs, one step away."
-          intro="The pathways a real practice site would use — appointment requests, phone, directions and verified online booking."
+          intro="The pathways a modern dental clinic site provides — appointment requests, phone inquiries, directions and online scheduling demos."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           <article className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-shadow duration-300 hover:shadow-[var(--shadow-lift)]">
@@ -143,7 +153,18 @@ function Home() {
               {PRACTICE.phoneDisplay}
             </p>
             <Button asChild variant="quiet" size="default" className="mt-5">
-              <a href={PRACTICE.phoneHref}>Call now</a>
+              <a
+                href={PRACTICE.phoneHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Phone Number", {
+                    description:
+                      "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+              >
+                Call now
+              </a>
             </Button>
           </article>
 
@@ -156,7 +177,16 @@ function Home() {
               {PRACTICE.addressCity}
             </p>
             <Button asChild variant="quiet" size="default" className="mt-5">
-              <a href={PRACTICE.mapsHref} target="_blank" rel="noopener noreferrer">
+              <a
+                href={PRACTICE.mapsHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Location", {
+                    description:
+                      "Clinic address is a placeholder for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+              >
                 Get Directions
               </a>
             </Button>
@@ -166,7 +196,7 @@ function Home() {
             <ArrowRight aria-hidden="true" className="size-5 text-accent" />
             <h3 className="mt-4 text-lg">Online Booking</h3>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-              Reserved for the verified W Dental Zocdoc listing as the external booking destination.
+              Demonstration online booking flow designed for seamless patient scheduling.
             </p>
             <BookOnlineButton size="default" variant="quiet" className="mt-5" />
             <BookingVerificationNote className="mt-3" />
@@ -178,7 +208,7 @@ function Home() {
         <SectionHeading
           eyebrow="Gallery"
           title="A calm, considered clinic environment."
-          intro="Concept imagery — not photographs of W | Dental."
+          intro="Concept gallery imagery — for demonstration purposes."
         />
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
@@ -208,7 +238,7 @@ function Home() {
           ))}
         </div>
         <p className="mt-5 text-xs text-muted-foreground">
-          Concept imagery — not photographs of W | Dental.
+          Concept gallery imagery — for demonstration purposes.
         </p>
       </Section>
 

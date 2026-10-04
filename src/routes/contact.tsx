@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { toast } from "sonner";
 
 import { AppointmentForm } from "@/components/site/AppointmentForm";
 import { BookOnlineButton, BookingVerificationNote } from "@/components/site/BookOnlineButton";
@@ -11,17 +12,17 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — W | Dental Concept Demo" },
+      { title: "Contact — Premium Dental Clinic Concept Demo" },
       {
         name: "description",
         content:
-          "Contact details and a demonstration appointment request for the W | Dental concept website in Far Rockaway, NY.",
+          "Demonstration contact details and simulated appointment request for the Premium Dental Clinic concept website by MNW Creative Studio.",
       },
-      { property: "og:title", content: "Contact — W | Dental Concept Demo" },
+      { property: "og:title", content: "Contact — Premium Dental Clinic Concept Demo" },
       {
         property: "og:description",
         content:
-          "Call the office, get directions to 18–26 Cornaga Ave, or try the concept appointment request.",
+          "Explore demo contact channels, location placeholders, and demonstration appointment request.",
       },
     ],
   }),
@@ -35,8 +36,8 @@ function Contact() {
         <SectionHeading
           as="h1"
           eyebrow="Contact"
-          title="Get in touch with the practice."
-          intro="Verified contact details for W | Dental, plus a demonstration appointment request."
+          title="Get in touch with the clinic."
+          intro="Demonstration contact details for Premium Dental Clinic, plus an interactive concept appointment request."
         />
       </Section>
 
@@ -48,25 +49,67 @@ function Contact() {
               {PRACTICE.addressLine}
               <br />
               {PRACTICE.addressCity}
-              <br />
-              {PRACTICE.country}
             </address>
-            <a
-              href={PRACTICE.phoneHref}
-              className="mt-4 inline-block text-base text-foreground underline-offset-4 hover:underline"
-            >
-              {PRACTICE.phoneDisplay}
-            </a>
+
+            <div className="mt-4 flex flex-col gap-1.5 text-sm">
+              <a
+                href={PRACTICE.phoneHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Phone Number", {
+                    description:
+                      "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+                className="inline-flex items-center gap-2 text-foreground underline-offset-4 hover:underline"
+              >
+                <Phone aria-hidden="true" className="size-3.5 text-accent" />
+                <span>{PRACTICE.phoneDisplay}</span>
+              </a>
+
+              <a
+                href={PRACTICE.emailHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Email Address", {
+                    description:
+                      "example@email.com is a simulated email address for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+                className="inline-flex items-center gap-2 text-foreground underline-offset-4 hover:underline"
+              >
+                <Mail aria-hidden="true" className="size-3.5 text-accent" />
+                <span>{PRACTICE.email}</span>
+              </a>
+            </div>
 
             <div className="mt-7 flex flex-col gap-3">
               <Button asChild variant="ink" size="xl">
-                <a href={PRACTICE.phoneHref}>
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                >
                   <Phone aria-hidden="true" />
                   Call the Office
                 </a>
               </Button>
               <Button asChild variant="quiet" size="xl">
-                <a href={PRACTICE.mapsHref} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={PRACTICE.mapsHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Location", {
+                      description:
+                        "Clinic address is a placeholder for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                >
                   <MapPin aria-hidden="true" />
                   Get Directions
                 </a>

@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, ShieldAlert } from "lucide-react";
+import { toast } from "sonner";
 
 import { BookOnlineButton, BookingVerificationNote } from "@/components/site/BookOnlineButton";
 import { Section, SectionHeading } from "@/components/site/Section";
@@ -9,17 +10,17 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/patient-info")({
   head: () => ({
     meta: [
-      { title: "Patient Info — W | Dental Concept Demo" },
+      { title: "Patient Info — Premium Dental Clinic Concept Demo" },
       {
         name: "description",
         content:
-          "General patient information for this W | Dental concept website: before your visit, what to expect, appointment requests and contact details.",
+          "General patient guidance for this Premium Dental Clinic concept website by MNW Creative Studio: before your visit, what to expect, and demonstration appointment pathways.",
       },
-      { property: "og:title", content: "Patient Info — W | Dental Concept Demo" },
+      { property: "og:title", content: "Patient Info — Premium Dental Clinic Concept Demo" },
       {
         property: "og:description",
         content:
-          "General guidance on visiting a dental practice and requesting an appointment, shown in a concept demo.",
+          "General guidance on visiting a dental clinic and requesting an appointment, shown in a concept demo.",
       },
     ],
   }),
@@ -30,25 +31,25 @@ const BLOCKS = [
   {
     heading: "Before Your Visit",
     items: [
-      "Bring a form of photo identification and any insurance card you hold, so the front desk can review coverage with you directly.",
-      "Allow time to complete any paperwork the practice provides at the office.",
-      "If you need to change an appointment, contact the office by phone.",
+      "Bring a form of photo identification and any dental insurance documentation you hold, so the front desk can review coverage with you directly.",
+      "Allow time to complete any intake forms provided prior to or upon arrival at the office.",
+      "If you need to reschedule or modify an appointment, contact the clinic directly.",
     ],
   },
   {
     heading: "What to Expect",
     items: [
-      "You will be greeted at reception and asked to confirm your details with the practice.",
-      "Care, options and next steps are discussed with the provider during your appointment.",
-      "Questions about your individual care should be directed to the practice, not to this concept website.",
+      "You will be greeted at reception and guided through a calm, organized check-in process.",
+      "Care options, diagnostic findings, and personalized treatment plans are discussed with our dental care team.",
+      "Questions regarding personal medical or dental diagnoses should always be discussed with a licensed practitioner.",
     ],
   },
   {
     heading: "Appointment Requests",
     items: [
       "Appointment requests on this concept site are a demonstration only — nothing is sent and no appointment is booked.",
-      "To reach the practice directly, call the office by phone.",
-      "Online booking is reserved for the verified W Dental booking provider listing.",
+      "Demonstration contact line: +1 (000) 000-0000 / email: example@email.com.",
+      "Online booking pathways can be connected directly to your practice management system in live deployment.",
     ],
   },
 ];
@@ -61,7 +62,7 @@ function PatientInfo() {
           as="h1"
           eyebrow="Patient Info"
           title="General information for your visit."
-          intro="The guidance below is general and does not constitute medical advice. Please confirm anything specific with the practice."
+          intro="The guidance below is representative and does not constitute medical advice. Please consult a licensed dental professional for specific medical questions."
         />
       </Section>
 
@@ -104,7 +105,18 @@ function PatientInfo() {
             <h3 className="mt-4 text-lg">By phone</h3>
             <p className="mt-2 text-sm text-muted-foreground">{PRACTICE.phoneDisplay}</p>
             <Button asChild variant="quiet" size="default" className="mt-5">
-              <a href={PRACTICE.phoneHref}>Call the Office</a>
+              <a
+                href={PRACTICE.phoneHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Phone Number", {
+                    description:
+                      "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+              >
+                Call the Office
+              </a>
             </Button>
           </article>
           <article className="rounded-xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
@@ -114,11 +126,18 @@ function PatientInfo() {
               {PRACTICE.addressLine}
               <br />
               {PRACTICE.addressCity}
-              <br />
-              {PRACTICE.country}
             </address>
             <Button asChild variant="quiet" size="default" className="mt-5">
-              <a href={PRACTICE.mapsHref} target="_blank" rel="noopener noreferrer">
+              <a
+                href={PRACTICE.mapsHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Location", {
+                    description:
+                      "Clinic address is a placeholder for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+              >
                 Get Directions
               </a>
             </Button>

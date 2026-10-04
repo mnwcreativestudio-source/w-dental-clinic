@@ -9,13 +9,13 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — W | Dental Concept Demo" },
+      { title: "About — Premium Dental Clinic Concept Demo" },
       {
         name: "description",
         content:
-          "About this concept website for W | Dental in Far Rockaway, New York, including the publicly listed provider Dr. Walishah Ahmadi, DDS.",
+          "About this concept website for Premium Dental Clinic, featuring Our Dental Care Team and modern patient-first care pathways.",
       },
-      { property: "og:title", content: "About — W | Dental Concept Demo" },
+      { property: "og:title", content: "About — Premium Dental Clinic Concept Demo" },
       {
         property: "og:description",
         content:
@@ -52,8 +52,8 @@ function About() {
         <SectionHeading
           as="h1"
           eyebrow="About"
-          title="A website concept for W | Dental."
-          intro={`${PRACTICE.name} is located in ${PRACTICE.city}. This concept demonstrates how the practice's information could be presented online — it is not an official website and contains no invented details about the practice.`}
+          title="A website concept for Premium Dental Clinic."
+          intro="This concept demonstrates how a modern, patient-first dental clinic can present its services, environment, and care philosophy online. Created as a portfolio design demo by MNW Creative Studio."
         />
       </Section>
 
@@ -69,7 +69,7 @@ function About() {
               className="w-full rounded-xl border border-border object-cover shadow-[var(--shadow-card)]"
             />
             <figcaption className="mt-3 text-xs text-muted-foreground">
-              Concept imagery — not photographs of W | Dental.
+              Concept imagery — for demonstration purposes.
             </figcaption>
           </figure>
           <div className="grid gap-7 sm:grid-cols-2">
@@ -84,11 +84,12 @@ function About() {
       </Section>
 
       <Section className="bg-secondary/40">
-        <SectionHeading eyebrow="Provider" title="Dr. Walishah Ahmadi, DDS" />
+        <SectionHeading eyebrow="Provider & Care" title={PRACTICE.provider} />
         <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Dr. Walishah Ahmadi, DDS is the publicly listed provider for {PRACTICE.name} in{" "}
-          {PRACTICE.city}. No further biographical information is shown in this concept, because
-          only verified, publicly listed details are used.
+          Our Dental Care Team represents experienced practitioners dedicated to comprehensive,
+          compassionate oral health care. In this concept portfolio demonstration, provider profiles
+          and credential highlights illustrate how modern dental teams can be presented to
+          prospective patients.
         </p>
         <ConceptNoticeInline className="mt-8 max-w-2xl" />
       </Section>

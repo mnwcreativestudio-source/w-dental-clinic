@@ -1,5 +1,6 @@
 import { CheckCircle2, ShieldAlert } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,6 +36,10 @@ export function AppointmentForm() {
 
     // Demo only: nothing is transmitted anywhere.
     setSubmitted(true);
+    toast("Demo Request Received", {
+      description:
+        "This concept website is a portfolio demo by MNW Creative Studio. No appointment has been booked.",
+    });
   }
 
   if (submitted) {
@@ -44,7 +49,8 @@ export function AppointmentForm() {
         className="rounded-xl border border-border bg-card p-8 shadow-[var(--shadow-card)]"
       >
         <CheckCircle2 aria-hidden="true" className="size-6 text-accent" />
-        <h3 className="mt-4 text-2xl">Demo request received</h3>
+        <h3 className="mt-4 text-2xl font-serif">Demo request received</h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{DEMO_SUBMIT_MESSAGE}</p>
         <Button variant="quiet" size="xl" className="mt-6" onClick={() => setSubmitted(false)}>
           Start another demo request
         </Button>
@@ -122,8 +128,8 @@ export function AppointmentForm() {
       </Button>
 
       <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-        This concept form is a demonstration only. Submissions are not sent anywhere and no
-        appointment is booked.
+        This concept form is a demonstration only for MNW Creative Studio. Submissions are not
+        sent anywhere and no appointment is booked.
       </p>
     </form>
   );

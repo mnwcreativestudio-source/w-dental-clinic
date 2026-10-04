@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { Accessibility, ArrowLeft, Eye, HeartHandshake, Phone } from "lucide-react";
+import { toast } from "sonner";
 
 import { ConceptNoticeInline } from "@/components/site/ConceptNotice";
 import { Section, SectionHeading } from "@/components/site/Section";
@@ -9,13 +10,13 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/accessibility")({
   head: () => ({
     meta: [
-      { title: "Accessibility Statement — W | Dental" },
+      { title: "Accessibility Statement — Premium Dental Clinic" },
       {
         name: "description",
         content:
-          "Accessibility statement for W | Dental, outlining our commitment to digital accessibility under ADA and WCAG 2.1 AA standards.",
+          "Accessibility statement for Premium Dental Clinic concept demo by MNW Creative Studio, outlining our commitment to digital accessibility under ADA and WCAG 2.1 AA standards.",
       },
-      { property: "og:title", content: "Accessibility Statement — W | Dental" },
+      { property: "og:title", content: "Accessibility Statement — Premium Dental Clinic" },
     ],
   }),
   component: AccessibilityStatement,
@@ -114,7 +115,17 @@ function AccessibilityStatement() {
               </p>
               <p>
                 Telephone:{" "}
-                <a href={PRACTICE.phoneHref} className="text-accent underline hover:opacity-80">
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                  className="text-accent underline hover:opacity-80"
+                >
                   {PRACTICE.phoneDisplay}
                 </a>
               </p>

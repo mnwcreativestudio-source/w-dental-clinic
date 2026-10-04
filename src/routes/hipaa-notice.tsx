@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2, FileCheck2, ShieldAlert } from "lucide-react";
+import { toast } from "sonner";
 
 import { ConceptNoticeInline } from "@/components/site/ConceptNotice";
 import { Section, SectionHeading } from "@/components/site/Section";
@@ -9,13 +10,13 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/hipaa-notice")({
   head: () => ({
     meta: [
-      { title: "HIPAA Notice of Privacy Practices — W | Dental" },
+      { title: "HIPAA Notice of Privacy Practices — Premium Dental Clinic" },
       {
         name: "description",
         content:
-          "HIPAA Notice of Privacy Practices for W | Dental, outlining protected health information rights, disclosures, and practice privacy duties.",
+          "HIPAA Notice of Privacy Practices for Premium Dental Clinic concept demo by MNW Creative Studio, outlining protected health information rights, disclosures, and privacy duties.",
       },
-      { property: "og:title", content: "HIPAA Notice of Privacy Practices — W | Dental" },
+      { property: "og:title", content: "HIPAA Notice of Privacy Practices — Premium Dental Clinic" },
     ],
   }),
   component: HipaaNotice,
@@ -153,7 +154,17 @@ function HipaaNotice() {
               </p>
               <p className="text-xs text-muted-foreground">
                 Telephone:{" "}
-                <a href={PRACTICE.phoneHref} className="text-accent underline hover:opacity-80">
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                  className="text-accent underline hover:opacity-80"
+                >
                   {PRACTICE.phoneDisplay}
                 </a>
               </p>

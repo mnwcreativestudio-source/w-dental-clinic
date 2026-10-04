@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { toast } from "sonner";
 
 import { ConceptNoticeInline } from "@/components/site/ConceptNotice";
 import { Wordmark } from "@/components/site/Wordmark";
@@ -32,6 +33,13 @@ export function SiteFooter() {
             <div className="mt-4 flex flex-col gap-2">
               <a
                 href={PRACTICE.phoneHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Phone Number", {
+                    description:
+                      "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
                 className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
               >
                 <Phone aria-hidden="true" className="size-3.5 text-accent" />
@@ -39,11 +47,16 @@ export function SiteFooter() {
               </a>
               <a
                 href={PRACTICE.mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Location", {
+                    description:
+                      "Clinic address is a placeholder for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
                 className="text-xs text-accent underline underline-offset-4 hover:opacity-80"
               >
-                Get Directions (Google Maps)
+                Get Directions (Map Demo)
               </a>
             </div>
           </div>
@@ -92,7 +105,7 @@ export function SiteFooter() {
           <div>
             <h2 className="eyebrow">Appointments</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Start a concept appointment request or call the clinic directly.
+              Start a concept appointment request or explore demo pathways.
             </p>
             <Button asChild variant="ink" size="xl" className="mt-4 w-full">
               <Link to="/contact" hash="request">
@@ -114,11 +127,13 @@ export function SiteFooter() {
 
         {/* Bottom Copyright & Medical Disclaimer */}
         <div className="mt-8 border-t border-border pt-6 text-center text-xs leading-relaxed text-muted-foreground space-y-2">
-          <p>
-            © {currentYear} {PRACTICE.name}. All rights reserved. Concept design by MNW Creative
-            Studio. Imagery is generic concept imagery and is not photographs of W | Dental.
+          <p className="font-medium text-foreground/80 tracking-wide">
+            Concept website by MNW Creative Studio — Demo only.
           </p>
-          <p className="text-[0.6875rem] opacity-80">
+          <p>
+            © {currentYear} {PRACTICE.name}. All rights reserved. Portfolio demonstration.
+          </p>
+          <p className="text-[0.6875rem] opacity-75">
             Medical Disclaimer: Content on this concept website is for informational and
             demonstrative purposes only and does not constitute medical, clinical, or dental advice.
           </p>

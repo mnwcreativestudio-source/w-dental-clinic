@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowLeft, Lock, Phone, ShieldCheck } from "lucide-react";
+import { toast } from "sonner";
 
 import { ConceptNoticeInline } from "@/components/site/ConceptNotice";
 import { Section, SectionHeading } from "@/components/site/Section";
@@ -9,13 +10,13 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — W | Dental" },
+      { title: "Privacy Policy — Premium Dental Clinic" },
       {
         name: "description",
         content:
-          "Privacy policy for the W | Dental website concept, explaining data practices, patient privacy protections, and demo information handling.",
+          "Privacy policy for the Premium Dental Clinic website concept by MNW Creative Studio, explaining data practices, patient privacy protections, and demo information handling.",
       },
-      { property: "og:title", content: "Privacy Policy — W | Dental" },
+      { property: "og:title", content: "Privacy Policy — Premium Dental Clinic" },
     ],
   }),
   component: PrivacyPolicy,
@@ -50,9 +51,9 @@ function PrivacyPolicy() {
               <span>Concept Website Notice</span>
             </div>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-              This website is an informational concept demonstration for {PRACTICE.name}. Demo
-              appointment requests do not transmit personal data to third parties, and no real
-              medical or payment information is stored.
+              This website is an informational concept demonstration for {PRACTICE.name} created by
+              MNW Creative Studio. Demo appointment requests do not transmit personal data to third
+              parties, and no real medical or payment information is collected or stored.
             </p>
           </div>
 
@@ -125,7 +126,17 @@ function PrivacyPolicy() {
               </p>
               <p>
                 Telephone:{" "}
-                <a href={PRACTICE.phoneHref} className="text-accent underline hover:opacity-80">
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                  className="text-accent underline hover:opacity-80"
+                >
                   {PRACTICE.phoneDisplay}
                 </a>
               </p>

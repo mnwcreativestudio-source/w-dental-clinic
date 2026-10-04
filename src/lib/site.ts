@@ -1,26 +1,21 @@
-export const CONCEPT_NOTICE = "CONCEPT WEBSITE — DEMO ONLY — NOT AFFILIATED WITH W | DENTAL";
+export const CONCEPT_NOTICE =
+  "CONCEPT PORTFOLIO DEMO — CREATED BY MNW CREATIVE STUDIO — DEMO ONLY";
 
 export const PRACTICE = {
-  name: "W | DENTAL",
-  provider: "Dr. Walishah Ahmadi, DDS",
-  city: "Far Rockaway, New York",
-  addressLine: "18–26 Cornaga Ave",
-  addressCity: "Far Rockaway, NY 11691",
-  country: "United States",
-  phoneDisplay: "(347) 230-4441",
-  phoneHref: "tel:+13472304441",
-  mapsHref:
-    "https://www.google.com/maps/dir/?api=1&destination=" +
-    encodeURIComponent("18-26 Cornaga Ave, Far Rockaway, NY 11691"),
-  hoursNotice: "Please confirm current hours directly with the clinic.",
+  name: "Premium Dental Clinic",
+  provider: "Our Dental Care Team",
+  city: "Location",
+  addressLine: "Clinic Address",
+  addressCity: "Location",
+  country: "Location",
+  phoneDisplay: "+1 (000) 000-0000",
+  phoneHref: "tel:+10000000000",
+  email: "example@email.com",
+  emailHref: "mailto:example@email.com",
+  mapsHref: "#directions",
+  hoursNotice: "Demo clinic hours: Monday – Friday, 8:00 AM – 5:00 PM.",
+  footerNotice: "Concept website by MNW Creative Studio — Demo only.",
 } as const;
-
-/**
- * No verified Zocdoc destination was supplied for this concept, so the
- * "Book Online" control renders as an unconfigured placeholder that must be
- * pointed at the verified listing before any launch.
- */
-export const ZOCDOC_URL: string | null = null;
 
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -57,7 +52,7 @@ export const SERVICES = [
     title: "Dental Consultations",
     icon: "messages",
     description:
-      "An appointment to discuss your dental care questions and available options with the provider.",
+      "An appointment to discuss your dental care questions and available options with our dental care team.",
   },
   {
     slug: "cosmetic",
@@ -69,20 +64,20 @@ export const SERVICES = [
     slug: "whitening",
     title: "Teeth Whitening",
     icon: "sun",
-    description: "Whitening is listed among the practice's cosmetic dental care categories.",
+    description: "Professional whitening treatments focused on safe, effective smile brightening.",
   },
   {
     slug: "implants",
     title: "Dental Implants",
     icon: "anchor",
-    description: "Implant care is listed among the practice's dental service categories.",
+    description: "Implant care is listed among the clinic's comprehensive restorative categories.",
   },
   {
     slug: "emergency",
     title: "Emergency Dental Care",
     icon: "siren",
     description:
-      "Emergency dental care is listed among the practice's services. Contact the office directly regarding urgent needs.",
+      "Emergency dental care is listed among the clinic's services. Prompt attention for urgent dental needs.",
   },
 ] as const;
 
@@ -100,4 +95,4 @@ export const SENSITIVE_INFO_NOTICE =
   "Please do not include medical or other sensitive health information in this demo form.";
 
 export const DEMO_SUBMIT_MESSAGE =
-  "Demo request received — this concept form is not connected to W | Dental or an email service, so no appointment has been booked and no message has been delivered.";
+  "Demo request received — this concept form is a portfolio demonstration for MNW Creative Studio. No appointment has been booked and no message has been sent.";

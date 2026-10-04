@@ -80,26 +80,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "W | Dental — Dental Care in Far Rockaway, NY | Concept Demo" },
+      { title: "Premium Dental Clinic — Modern Dental Care | Concept Demo" },
       {
         name: "description",
         content:
-          "Concept website for W | Dental in Far Rockaway, NY, showcasing a modern dental website experience with services, contact information and appointment pathways.",
+          "Concept website for Premium Dental Clinic, showcasing an elevated dental care experience with services, patient information, and demonstration appointment pathways.",
       },
       { name: "robots", content: "noindex, nofollow" },
       {
         property: "og:title",
-        content: "W | Dental — Dental Care in Far Rockaway, NY | Concept Demo",
+        content: "Premium Dental Clinic — Modern Dental Care | Concept Demo",
       },
       {
         property: "og:description",
         content:
-          "A concept dental website by MNW Creative Studio. Demo only — not affiliated with W | Dental.",
+          "A concept dental website by MNW Creative Studio. Demo only.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0c1927" },
-      { name: "apple-mobile-web-app-title", content: "W Dental" },
+      { name: "apple-mobile-web-app-title", content: "Premium Dental" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

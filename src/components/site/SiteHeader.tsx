@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 import { ConceptNoticeBar } from "@/components/site/ConceptNotice";
 import { Wordmark } from "@/components/site/Wordmark";
@@ -44,7 +45,16 @@ export function SiteHeader() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <Button asChild variant="ghost" size="default">
-              <a href={PRACTICE.phoneHref}>
+              <a
+                href={PRACTICE.phoneHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toast("Demo Phone Number", {
+                    description:
+                      "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                  });
+                }}
+              >
                 <Phone aria-hidden="true" />
                 {PRACTICE.phoneDisplay}
               </a>
@@ -108,7 +118,17 @@ export function SiteHeader() {
                 </Link>
               </Button>
               <Button asChild variant="quiet" size="xl">
-                <a href={PRACTICE.phoneHref}>
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpen(false);
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                >
                   <Phone aria-hidden="true" />
                   Call {PRACTICE.phoneDisplay}
                 </a>

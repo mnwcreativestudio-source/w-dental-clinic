@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AlertCircle, ArrowLeft, FileText } from "lucide-react";
+import { toast } from "sonner";
 
 import { ConceptNoticeInline } from "@/components/site/ConceptNotice";
 import { Section, SectionHeading } from "@/components/site/Section";
@@ -9,13 +10,13 @@ import { PRACTICE } from "@/lib/site";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — W | Dental" },
+      { title: "Terms of Service — Premium Dental Clinic" },
       {
         name: "description",
         content:
-          "Terms of Service for the W | Dental website, including medical disclaimers, appointment policies, and acceptable website use.",
+          "Terms of Service for the Premium Dental Clinic concept website by MNW Creative Studio, including medical disclaimers, demo notices, and acceptable website use.",
       },
-      { property: "og:title", content: "Terms of Service — W | Dental" },
+      { property: "og:title", content: "Terms of Service — Premium Dental Clinic" },
     ],
   }),
   component: TermsOfService,
@@ -91,9 +92,8 @@ function TermsOfService() {
             </h2>
             <p>
               Submission of an appointment request via this concept website does not create a
-              doctor-patient relationship, nor does it guarantee an appointment reservation. All
-              clinical appointments must be confirmed directly with practice staff by telephone or
-              through verified booking channels.
+              doctor-patient relationship, nor does it guarantee an appointment reservation. This
+              is a demonstration website by MNW Creative Studio.
             </p>
           </div>
 
@@ -118,9 +118,9 @@ function TermsOfService() {
               5. Third-Party Links & Navigation
             </h2>
             <p>
-              This website provides external links to third-party services (such as Google Maps for
-              directions and Zocdoc for verified scheduling). {PRACTICE.name} is not responsible for
-              the content, privacy practices, or availability of third-party platforms.
+              This website provides external links or simulated demonstration endpoints (such as
+              maps or digital communication channels). {PRACTICE.name} is not responsible for the
+              content, privacy practices, or availability of third-party platforms.
             </p>
           </div>
 
@@ -148,7 +148,17 @@ function TermsOfService() {
               </p>
               <p>
                 Phone:{" "}
-                <a href={PRACTICE.phoneHref} className="text-accent underline hover:opacity-80">
+                <a
+                  href={PRACTICE.phoneHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast("Demo Phone Number", {
+                      description:
+                        "+1 (000) 000-0000 is a simulated contact number for this MNW Creative Studio portfolio demo.",
+                    });
+                  }}
+                  className="text-accent underline hover:opacity-80"
+                >
                   {PRACTICE.phoneDisplay}
                 </a>
               </p>

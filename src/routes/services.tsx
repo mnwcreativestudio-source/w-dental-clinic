@@ -18,13 +18,13 @@ import { SERVICES } from "@/lib/site";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — W | Dental Concept Demo" },
+      { title: "Services — Premium Dental Clinic Concept Demo" },
       {
         name: "description",
         content:
-          "Dental service categories publicly listed for W | Dental in Far Rockaway, NY, presented in a concept website demo.",
+          "Representative dental service categories presented in a concept clinic website demo by MNW Creative Studio.",
       },
-      { property: "og:title", content: "Services — W | Dental Concept Demo" },
+      { property: "og:title", content: "Services — Premium Dental Clinic Concept Demo" },
       {
         property: "og:description",
         content:
@@ -52,8 +52,8 @@ function Services() {
         <SectionHeading
           as="h1"
           eyebrow="Services"
-          title="Dental care categories listed for the practice."
-          intro="The categories below reflect publicly listed dental care at W | Dental. Descriptions are general and informational, not medical advice."
+          title="Comprehensive dental care categories."
+          intro="The categories below reflect services typical of a modern premium dental practice. Descriptions are general and informational for demonstration purposes."
         />
       </Section>
 
@@ -83,7 +83,7 @@ function Services() {
 
         <p className="mt-10 max-w-3xl text-xs leading-relaxed text-muted-foreground">
           This concept does not provide medical advice, treatment recommendations or outcome
-          information. Please speak with the practice about your individual care.
+          information. Please speak with a licensed dental practitioner about your individual care.
         </p>
       </Section>
 
@@ -92,8 +92,7 @@ function Services() {
           <div className="max-w-xl">
             <h2 className="text-3xl">Questions about a service?</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Start a concept appointment request, or use the verified booking provider once its
-              destination is configured.
+              Start a concept appointment request, or explore our simulated online scheduling pathways.
             </p>
             <BookingVerificationNote className="mt-3" />
           </div>
