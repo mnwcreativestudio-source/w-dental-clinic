@@ -92,8 +92,8 @@ function TermsOfService() {
             </h2>
             <p>
               Submission of an appointment request via this concept website does not create a
-              doctor-patient relationship, nor does it guarantee an appointment reservation. This
-              is a demonstration website by MNW Creative Studio.
+              doctor-patient relationship, nor does it guarantee an appointment reservation. This is
+              a demonstration website by MNW Creative Studio.
             </p>
           </div>
 

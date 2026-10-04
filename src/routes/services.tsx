@@ -92,7 +92,8 @@ function Services() {
           <div className="max-w-xl">
             <h2 className="text-3xl">Questions about a service?</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Start a concept appointment request, or explore our simulated online scheduling pathways.
+              Start a concept appointment request, or explore our simulated online scheduling
+              pathways.
             </p>
             <BookingVerificationNote className="mt-3" />
           </div>

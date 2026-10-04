@@ -16,7 +16,10 @@ export const Route = createFileRoute("/hipaa-notice")({
         content:
           "HIPAA Notice of Privacy Practices for Premium Dental Clinic concept demo by MNW Creative Studio, outlining protected health information rights, disclosures, and privacy duties.",
       },
-      { property: "og:title", content: "HIPAA Notice of Privacy Practices — Premium Dental Clinic" },
+      {
+        property: "og:title",
+        content: "HIPAA Notice of Privacy Practices — Premium Dental Clinic",
+      },
     ],
   }),
   component: HipaaNotice,

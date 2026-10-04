@@ -128,8 +128,8 @@ export function AppointmentForm() {
       </Button>
 
       <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-        This concept form is a demonstration only for MNW Creative Studio. Submissions are not
-        sent anywhere and no appointment is booked.
+        This concept form is a demonstration only for MNW Creative Studio. Submissions are not sent
+        anywhere and no appointment is booked.
       </p>
     </form>
   );

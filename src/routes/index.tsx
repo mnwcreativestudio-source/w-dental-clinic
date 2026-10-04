@@ -23,8 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Premium Dental Clinic — Concept Website Demo" },
       {
         property: "og:description",
-        content:
-          "A modern dental website concept by MNW Creative Studio. Demo only.",
+        content: "A modern dental website concept by MNW Creative Studio. Demo only.",
       },
     ],
   }),
@@ -121,8 +120,8 @@ function Home() {
           ))}
         </div>
         <p className="mt-10 text-xs leading-relaxed text-muted-foreground">
-          Service categories shown are representative examples for demonstration purposes. No pricing,
-          availability or outcome claims are made in this concept.
+          Service categories shown are representative examples for demonstration purposes. No
+          pricing, availability or outcome claims are made in this concept.
         </p>
       </Section>
 
